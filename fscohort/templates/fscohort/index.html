@@ -1,0 +1,20 @@
+{% extends "fscohort/base.html" %} {% block container %}
+{% load static %}
+
+<h2>Merhabalar...</h2>
+<img src="{% static 'kodaman.jpg' %}" alt="avatar" style="width: 35%;">
+<p>Öğrenci Bilgi Sistemine Hoşgeldiniz</p>
+
+<h3 class="mt-2">Öğrenci Listesi</h3>
+<ul >
+    {% for student in students%}
+   
+    <a href="{% url 'detail' student.id  %}" >
+    <li style="font-size: 1rem; list-style-type:none;" >{{ student.number }} - {{student.first_name}} {{student.last_name}}
+    
+    </li>
+    </a>
+    {%endfor%}
+</ul>
+
+{% endblock container %}

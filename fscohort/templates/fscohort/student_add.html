@@ -1,0 +1,12 @@
+{% extends 'fscohort/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block container %}
+    <h2 class="mt-2">Öğrenci Ekle</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form|crispy }}
+        {{ form.media }}                  					   
+        <input type="submit" value="EKLE" style="margin-top: 0.5rem;">
+    </form>
+{% endblock container %}

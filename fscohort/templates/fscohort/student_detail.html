@@ -1,0 +1,14 @@
+{% extends 'fscohort/base.html' %}
+{% load static %}
+
+    {% block container %}
+    <h2 class="mt-2">Öğrenci Detayları</h2>
+    {% if student.img %}
+    <img src="{{student.img.url}}" alt="student" style="width:40%">
+    {% endif %}
+    
+    <p style="font-size: 2rem;">{{student.first_name}} {{student.last_name}}</p>
+
+    <a href="{% url 'update' student.id %}" class="btn btn-primary">Düzenle</a>
+    <a href="{% url 'delete' student.id %}" class="btn btn-danger">Sil</a>
+    {% endblock container %}

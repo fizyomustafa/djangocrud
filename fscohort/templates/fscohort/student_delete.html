@@ -1,0 +1,18 @@
+{% extends 'fscohort/base.html' %}
+
+
+{% block container %}
+    <br>
+    {{student.first_name}} {{student.last_name}} silinecek...
+    <p>Emin misin?</p>
+    <div style="display: flex;">
+    <form action="" method="POST" style="margin-right:1rem;">
+        {% csrf_token %}
+        <input type="submit" value="Evet">
+    </form>
+    <a href="{% url 'list' %}">
+        <button>Hayır</button>
+    </a>
+    </div>
+   
+{% endblock container %}
